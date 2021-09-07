@@ -14,7 +14,7 @@
           Open the Browser Console to view your work (Right-Click => Inspect or
           fn+F12)
         </p>
-        <form id="exercise-form">
+        <form id="exercise-form" method="POST" action="javascript:controller()" onsubmit="return validateForm()">
           <label for="name">Name</label>
           <input id="name" name="name" type="text">
           <label for="pets">Pets (Seperate with a comma)</label>
@@ -23,7 +23,9 @@
           <input id="residence" name="residence" type="text">
           <label for="hobbies">Hobbies (Seperate with a comma)</label>
           <input id="hobbies" name="hobbies" type="text">
+          <button type= "submit">Submit</button>
         </form>
+        <h4>Log</h4>
         <p id="log"></p>
       </div>
     </main>
