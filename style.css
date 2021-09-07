@@ -1,6 +1,6 @@
 html,
 body {
-  height: 100%;
+  height: 125%;
 }
 
 #main {
@@ -15,7 +15,7 @@ body {
 
 #items-container {
     border: 1px solid black;
-    height: 100%;
+    height: 80%;
 }
 
 #exercise-form {
@@ -37,9 +37,20 @@ input {
     height: 1.5rem;
 }
 
+button {
+    margin: 1rem auto;
+    width: 10rem;
+    font-weight: 900;
+    font-size: 1.3rem;
+}
+
 #log {
-    width: 40%;
-    height: 20%;
+    width: 50%;
+    height: 30%;
+    text-align: left;
+    padding-left: 1rem;
     margin: 1rem auto 1rem auto;
+    overflow-y: scroll;
+    background-color: burlywood;
     border: 1px solid black;;
 }
