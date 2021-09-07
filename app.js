@@ -52,10 +52,50 @@ count=person.getCount();
 const person2 = new Person("Tom",["fish","pig"],"Chicago",["coding","biking"],count);
 person2.info();
 
-function controller() {
-    console.log("--- Begin controller() ---")
+function controller(name, pets, residence, hobbies) {
+    console.log("--- Begin controller() ---");
+    console.log(`Parameters:\nName=${name}\nPets=${pets}\nResidence=${residence}\nHobbies=${hobbies}\n`);
+
+    petsArray = pets.split(",");
+    hobbiesArray = hobbies.split(",");
 }
 
-function validateForm() {
-    console.log("--- Begin validateForm() ---")
+function validateForm(name, pets, residence, hobbies) {
+    console.log("--- Begin validateForm() ---");
+    console.log(`Parameters:\nName=${name}\nPets=${pets}\nResidence=${residence}\nHobbies=${hobbies}\n`);
+
+    const errorColor = "red";
+    const normalColor = "black";
+    const nameId = "name1";
+    const petsId = "pets";
+    const residenceId = "residence";
+    const hobbiesId = "hobbies";
+    let validation = true;
+
+    document.getElementById(nameId).style.color=normalColor;
+    document.getElementById(petsId).style.color=normalColor;
+    document.getElementById(residenceId).style.color=normalColor;
+    document.getElementById(hobbiesId).style.color=normalColor;
+
+    if(name == "") {
+        document.getElementById(nameId).placeholder="Error Name Required";
+        document.getElementById(nameId).style.color=errorColor;
+        validation=false;
+    }
+    if(pets == "") {
+        document.getElementById(petsId).placeholder="Error Pets Required";
+        document.getElementById(petsId).style.color=errorColor;
+        validation=false;
+    }
+    if(residence == "") {
+        document.getElementById(residenceId).placeholder="Error Residence Required";
+        document.getElementById(residenceId).style.color=errorColor;
+        validation=false;
+    }
+    if(hobbies == "") {
+        document.getElementById(hobbiesId).placeholder="Error Hobbies Required";
+        document.getElementById(hobbiesId).style.color=errorColor;
+        validation=false;
+    }
+    return validation;
 }
