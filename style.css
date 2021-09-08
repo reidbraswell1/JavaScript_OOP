@@ -1,6 +1,7 @@
 html,
 body {
   height: 125%;
+  font-family: 'Roboto', sans-serif;
 }
 
 #main {
@@ -8,22 +9,28 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 1px solid black;
   margin-top: 1rem;
-  height: 100%;
+  height: 115%;
+  /* Test
+  border: 1px solid black;
+  */
 }
 
 #items-container {
-    border: 1px solid black;
     height: 80%;
+    /* Test 
+    border: 1px solid black;
+    */
 }
 
 #exercise-form {
-    border: 1px solid black;
     padding-bottom: 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    /* Test
+    border: 1px solid black;
+    */
 }
 
 label {
@@ -48,9 +55,10 @@ button {
     width: 50%;
     height: 30%;
     text-align: left;
+    padding-top: 1rem;
     padding-left: 1rem;
     margin: 1rem auto 1rem auto;
     overflow-y: scroll;
     background-color: burlywood;
-    border: 1px solid black;;
+    border: 3px double black;
 }
