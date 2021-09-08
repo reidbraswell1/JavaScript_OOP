@@ -15,7 +15,7 @@ class Person {
         this.outputLog = "log";
     }
     info() {
-        console.log(`Person ${this.counter}.\n==========\nName=${this.name}\nPets=${this.pets}\nResidence=${this.residence}\nHobbies=${this.hobbies}`);
+        console.log(`Person ${this.counter}.\n==========\nName=${this.name}\nPets=${this.pets}\nResidence=${this.residence}\nHobbies=${this.hobbies}\n==========\n`);
         const log = document.getElementById(this.outputLog);
         let textNode = document.createTextNode(`Person ${this.counter}.`);
         log.appendChild(textNode);
