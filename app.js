@@ -2,6 +2,8 @@ console.log("Hello World!\n==========\n");
 
 // Exercise 1 Section
 console.log("EXERCISE 1:\n==========\n");
+
+// Person object
 class Person {
     constructor(name, pets, residence, hobbies, count) {
         this.name = name;
@@ -13,7 +15,7 @@ class Person {
         this.outputLog = "log";
     }
     info() {
-        console.log(`Person ${this.counter}.\n==========\nName=${this.name}\nPets=${this.pets}\nResidence=${this.residence}\n${this.hobbies}`);
+        console.log(`Person ${this.counter}.\n==========\nName=${this.name}\nPets=${this.pets}\nResidence=${this.residence}\nHobbies=${this.hobbies}`);
         const log = document.getElementById(this.outputLog);
         let textNode = document.createTextNode(`Person ${this.counter}.`);
         log.appendChild(textNode);
@@ -24,13 +26,13 @@ class Person {
         textNode = document.createTextNode(`Name=${this.name}`);
         log.appendChild(textNode);
         log.appendChild(document.createElement("br"));
-        textNode = document.createTextNode(`Pets=${this.pets}`);
+        textNode = document.createTextNode(`Pets=${this.pets.toString()}`);
         log.appendChild(textNode);
         log.appendChild(document.createElement("br"));
         textNode = document.createTextNode(`Residence=${this.residence}`);
         log.appendChild(textNode);
         log.appendChild(document.createElement("br"));
-        textNode = document.createTextNode(`Hobbies=${this.hobbies}`);
+        textNode = document.createTextNode(`Hobbies=${this.hobbies.toString()}`);
         log.appendChild(textNode);
         log.appendChild(document.createElement("br"));
         textNode = document.createTextNode("===============");
@@ -46,20 +48,26 @@ class Person {
 
 let count = 0;
 
-let person = new Person("Sam",["dog","cat"],"Long Island",["fishing","sailing"],count);
-person.info();
-count=person.getCount();
-const person2 = new Person("Tom",["fish","pig"],"Chicago",["coding","biking"],count);
-person2.info();
-
+// Main controlling function. This function is called after
+// form validation. This function will create a person object
+// for each person entered on the form.
 function controller(name, pets, residence, hobbies) {
     console.log("--- Begin controller() ---");
     console.log(`Parameters:\nName=${name}\nPets=${pets}\nResidence=${residence}\nHobbies=${hobbies}\n`);
 
     petsArray = pets.split(",");
     hobbiesArray = hobbies.split(",");
+
+    let person = new Person(name, petsArray, residence, hobbiesArray, count);
+    person.info();
+    count = person.getCount();
+
+    document.getElementById("exercise-form").reset();
 }
 
+// Function to validate the form. If there are errors
+// the error will show up as a placeholder in the input
+// fields.
 function validateForm(name, pets, residence, hobbies) {
     console.log("--- Begin validateForm() ---");
     console.log(`Parameters:\nName=${name}\nPets=${pets}\nResidence=${residence}\nHobbies=${hobbies}\n`);
